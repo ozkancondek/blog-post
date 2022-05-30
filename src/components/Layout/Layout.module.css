@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 .header p {
-  color: #b3c5cd;
+  color: var(--text-color-secondary);
   font-weight: bold;
   font-size: 1.5rem;
 }
