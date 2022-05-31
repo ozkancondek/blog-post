@@ -23,6 +23,15 @@
   margin-top: 4px;
   margin-bottom: 24px;
 }
+.button_container {
+  background-color: rgb(177, 177, 177);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5px;
+}
 
 .details_panel {
   background-color: var(--background-color-light);
@@ -69,6 +78,15 @@
 
   .container_left {
     grid-column: 1 / span 4;
+  }
+  .button_container {
+    background-color: rgb(177, 177, 177);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
   }
 
   .container_right {

@@ -1,23 +1,16 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Brightness6Rounded } from "@material-ui/icons";
+import { MdDarkMode } from "react-icons/md";
+import { BsFillSunFill } from "react-icons/bs";
 import styles from "./Layout.module.css";
 import logo from "../../asset/images/logo.png";
 import Image from "next/image";
 
+//reusable component for header and footer on every page
 const Layout = ({ children, title = "Blog Posts" }) => {
+  //initial value of theme is light
   const [theme, setTheme] = useState("light");
-
-  //get theme when component mounted
-  useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      localStorage.getItem("theme")
-    );
-
-    setTheme(localStorage.getItem("theme"));
-  }, []);
 
   //toggle theme
   const switchTheme = () => {
@@ -32,6 +25,16 @@ const Layout = ({ children, title = "Blog Posts" }) => {
     document.documentElement.setAttribute("data-theme", theme);
   };
 
+  //get theme when component mounted
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+
+    setTheme(localStorage.getItem("theme"));
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -40,13 +43,19 @@ const Layout = ({ children, title = "Blog Posts" }) => {
       </Head>
 
       <header className={styles.header}>
-        <Link href="/">
-          <Image width="40" height="45" src={logo} alt="logo" />
-        </Link>
-        <p>Blog-Posts</p>
+        <div className={styles.header_text}>
+          <Link href="/">
+            <Image width="40" height="45" src={logo} alt="logo" />
+          </Link>
+          <h2>Blog-Posts</h2>
+        </div>
 
         <button className={styles.themeSwitcher} onClick={switchTheme}>
-          <Brightness6Rounded fontSize="large" />
+          {theme === "dark" ? (
+            <BsFillSunFill size="30" />
+          ) : (
+            <MdDarkMode size="30" />
+          )}
         </button>
       </header>
 

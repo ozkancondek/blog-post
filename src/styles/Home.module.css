@@ -6,6 +6,11 @@
 .inputContainer {
   margin-bottom: 40px;
 }
+.btn_container {
+  margin: auto;
+  flex: 1;
+  margin-bottom: 10px;
+}
 
 @media screen and (min-width: 720px) {
   .inputContainer {

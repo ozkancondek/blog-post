@@ -1,5 +1,6 @@
 import { API } from "./axiosBase";
 
+//all data interaction functions
 export const fetchData = async () => {
   let res = await API("/posts");
   return res.data;

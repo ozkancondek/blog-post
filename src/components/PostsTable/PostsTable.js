@@ -1,11 +1,9 @@
-import {
-  KeyboardArrowDownRounded,
-  KeyboardArrowUpRounded,
-  KeyboardTabRounded,
-} from "@material-ui/icons";
 import { useState } from "react";
-import styles from "./PostsTable.module.css";
 import Link from "next/link";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { TbArrowBigRightLine } from "react-icons/tb";
+import styles from "./PostsTable.module.css";
+
 //order posts
 const orderBy = (posts, value, direction) => {
   if (direction === "asc") {
@@ -17,7 +15,7 @@ const orderBy = (posts, value, direction) => {
   return posts;
 };
 
-//arrow icons component for sort posts
+//component for sorting arrow icons
 const SortArrow = ({ direction }) => {
   if (!direction) {
     return <></>;
@@ -25,22 +23,26 @@ const SortArrow = ({ direction }) => {
   if (direction === "desc") {
     return (
       <div className={styles.heading_arrow}>
-        <KeyboardArrowDownRounded color="inherit" />
+        <IoIosArrowUp />
       </div>
     );
   } else {
     return (
       <div className={styles.heading_arrow}>
-        <KeyboardArrowUpRounded color="inherit" />
+        <IoIosArrowDown />
       </div>
     );
   }
 };
 
+//list of posts will be rendered in this component. It creates info-row for every post
 const PostsTable = ({ posts }) => {
   //state for define direction
   const [direction, setDirection] = useState();
+
+  //state for header values. Post Number & Post Title
   const [value, setValue] = useState();
+
   //arrow switch function
   const switchDirection = () => {
     if (!direction) {
@@ -57,6 +59,7 @@ const PostsTable = ({ posts }) => {
     switchDirection();
     setValue(value);
   };
+
   //take ordered posts
   const orderedPosts = orderBy(posts, value, direction);
   return (
@@ -87,7 +90,7 @@ const PostsTable = ({ posts }) => {
             <div className={styles.row}>
               <div className={styles.postNum}>{post.id}</div>
               <div className={styles.bullet}>
-                <KeyboardTabRounded color="inherit" />
+                <TbArrowBigRightLine size="20" />
               </div>
 
               <div className={styles.postTitle}>{post.title}</div>
