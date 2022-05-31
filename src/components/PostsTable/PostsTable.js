@@ -1,7 +1,7 @@
 import {
   KeyboardArrowDownRounded,
   KeyboardArrowUpRounded,
-  /*  KeyboardDoubleArrowRightRoundedIcon, */
+  KeyboardTabRounded,
 } from "@material-ui/icons";
 import { useState } from "react";
 import styles from "./PostsTable.module.css";
@@ -82,12 +82,12 @@ const PostsTable = ({ posts }) => {
       </div>
 
       {orderedPosts.map((post) => (
-        <Link href={`/posts/${post.id}`} key={post.id}>
+        <Link href={`/post/${post.id}`} key={post.id}>
           <a>
             <div className={styles.row}>
               <div className={styles.postNum}>{post.id}</div>
               <div className={styles.bullet}>
-                <KeyboardArrowUpRounded size="large" />
+                <KeyboardTabRounded color="inherit" />
               </div>
 
               <div className={styles.postTitle}>{post.title}</div>
