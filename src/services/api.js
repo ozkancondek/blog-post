@@ -4,6 +4,10 @@ export const fetchData = async () => {
   let res = await API("/posts");
   return res.data;
 };
+export const fetchDataComments = async (id) => {
+  let res = await API(`/posts/${id}/comments`);
+  return res.data;
+};
 
 export const fetchSingleData = async (id) => {
   let res = await API(`/posts/${id}`);
@@ -26,6 +30,7 @@ export const updateData = async (id, data) => {
 
 export const blogServices = {
   fetchData,
+  fetchDataComments,
   fetchSingleData,
   postData,
   deleteData,
