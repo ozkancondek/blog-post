@@ -21,12 +21,6 @@
 
 ---
 
-## Demo
-
-Click [here](https://blueberry-places-app.herokuapp.com) to use the app!
-
----
-
 ## To start project
 
 - Clone project source from remote to local

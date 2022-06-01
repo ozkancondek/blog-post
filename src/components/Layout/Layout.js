@@ -6,6 +6,7 @@ import { BsFillSunFill } from "react-icons/bs";
 import styles from "./Layout.module.css";
 import logo from "../../asset/images/logo.png";
 import Image from "next/image";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //reusable component for header and footer on every page
 const Layout = ({ children, title = "Blog Posts" }) => {

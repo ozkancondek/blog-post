@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import { toastSuccessNotify } from "../services/Toastify";
 import { ToastContainer, toast } from "react-toastify";
 import { Button } from "react-bootstrap";
-import "react-toastify/dist/ReactToastify.css";
 
 //here is home page when app first opened
 export default function Home({ posts }) {
